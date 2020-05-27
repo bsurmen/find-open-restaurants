@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const DownloadCSV = ({ text, variant }) => {
+const DownloadCSV = () => {
   const classes = useStyles();
 
   return (

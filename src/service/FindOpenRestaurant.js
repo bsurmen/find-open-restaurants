@@ -8,6 +8,7 @@ export default function findOpenRestaurants(
   let dayDesired = date.getDay();
   let minuteDesired = date.getHours() * 60 + date.getMinutes();
 
+  // Iterates of processed data to compare incoming day and hour value
   for (var i = 0; i < processedData.length; i++) {
     var restaurantTimeRange = processedData[i];
     for (var i = 0; i < processedData.length; i++) {

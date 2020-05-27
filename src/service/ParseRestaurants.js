@@ -1,4 +1,6 @@
 export default function ParseRestaurants(dataJSON) {
+  // Converts incoming data into [times: [[days, startMinute, endMinute], ... ] format
+
   let processedData = [];
 
   for (let i = 0; i < dataJSON.length - 1; i++) {
@@ -12,6 +14,7 @@ const ParseSingleRestaurant = (restaurants) => {
 
   const splitedTimesArray = restaurants.times.split("/ ");
 
+  // Sends single restaurant data to be parsed
   for (let i = 0; i < splitedTimesArray.length; i++) {
     let dayRange = splitedTimesArray[i];
     singleRestaurantArr = singleRestaurantArr.concat(
@@ -36,7 +39,7 @@ const ParseSingleRange = (dayRange) => {
 };
 
 const HourToMinutes = (timeString) => {
-  let time = timeString.match(/(\d+)(:(\d\d))?\s*(p?)/i);
+  let time = timeString.match(/(\d+)(:(\d\d))?\s*(p?)/i); // Returns an array of time values
   let pm = time[4];
   let hours = parseInt(time[1], 10);
 
@@ -71,6 +74,7 @@ const MultiDays = (dateRange, start, end) => {
   for (let i = 0; i < numberOfDays; i++) {
     let currentDay = (firstDayOfRange + i) % 7;
     if (end < start) {
+      // Splits days into 2 if open hours exist after midnight
       restaurantDayHour.push({ day: currentDay, start: start, end: 24 * 60 });
       let nextDay = (firstDayOfRange + i + 1) % 7;
       restaurantDayHour.push({ day: nextDay, start: 0, end: end });
