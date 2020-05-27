@@ -1,5 +1,7 @@
 # Burak Sürmen
-**Here is Full-Stack Intern Take-Home Assignment.**
+
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=bsurmen_find-open-restaurants&metric=alert_status)](https://sonarcloud.io/dashboard?id=bsurmen_find-open-restaurants)          
+**Here is Full-Stack Intern Take-Home Assignment.**  
 
 Search for open restaurants according to day and hour.
 First, drag or click to upload CSV file of restaurants. If you don't have it, you can easily download it.
