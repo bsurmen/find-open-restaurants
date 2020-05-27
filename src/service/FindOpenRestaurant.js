@@ -9,17 +9,14 @@ export default function findOpenRestaurants(
   let minuteDesired = date.getHours() * 60 + date.getMinutes();
 
   // Iterates of processed data to compare incoming day and hour value
-  for (var i = 0; i < processedData.length; i++) {
-    var restaurantTimeRange = processedData[i];
-    for (var i = 0; i < processedData.length; i++) {
-      var restaurantTimeRange = processedData[i];
+  for (let i = 0; i < processedData.length; i++) {
+    let restaurantTimeRange = processedData[i];
 
-      if (OpenRestaurants(restaurantTimeRange, dayDesired, minuteDesired, i)) {
-        openRestaurantsList.push({
-          name: dataJSON[i].name,
-          times: dataJSON[i].times,
-        });
-      }
+    if (OpenRestaurants(restaurantTimeRange, dayDesired, minuteDesired)) {
+      openRestaurantsList.push({
+        name: dataJSON[i].name,
+        times: dataJSON[i].times,
+      });
     }
   }
 

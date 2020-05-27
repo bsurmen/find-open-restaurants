@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Container } from "@material-ui/core";
-import findOpenRestaurants from "./service/FindOpenRestaurant";
+import findOpenRestaurants from "./service/findOpenRestaurant";
 import ParseRestaurants from "./service/ParseRestaurants";
 import CSVtoJsonParser from "./components/CSVtoJsonParser";
 import RestaurantTable from "./components/RestaurantTable";
