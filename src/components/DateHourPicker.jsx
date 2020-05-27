@@ -8,14 +8,14 @@ import {
   KeyboardDatePicker,
 } from "@material-ui/pickers";
 
-export default function DateHourPicker({ handleDate }) {
+export default function DateHourPicker({ handlehourDay }) {
   const [selectedDate, setSelectedDate] = React.useState(
     new Date("2025-06-17T08:24:00")
   );
 
   const handleDateChange = (date) => {
     setSelectedDate(date);
-    handleDate(date);
+    handlehourDay(date);
   };
 
   return (

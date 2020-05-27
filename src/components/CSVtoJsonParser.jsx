@@ -7,7 +7,7 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     marginTop: "2%",
     [theme.breakpoints.down("sm")]: {
-       marginTop: "10%",
+      marginTop: "10%",
     },
   },
   paper: {
@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const CSVtoJsonParser = () => {
+const CSVtoJsonParser = ({ getJSONData }) => {
   const classes = useStyles();
 
   const handleOnDrop = async (data) => {
@@ -26,6 +26,8 @@ const CSVtoJsonParser = () => {
     data.map((row) => {
       JSONArray.push({ name: row.data[0], times: row.data[1] });
     });
+
+    await getJSONData(JSONArray);
   };
 
   const handleOnError = (err, file, inputElem, reason) => {

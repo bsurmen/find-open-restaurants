@@ -15,9 +15,12 @@ const useStyles = makeStyles((theme) => ({
   table: {
     marginTop: "2%",
   },
+  text: {
+    fontWeight: "bold",
+  },
 }));
 
-export default function RestaurantTable({ range }) {
+export default function RestaurantTable({ content }) {
   const classes = useStyles();
 
   return (
@@ -26,17 +29,21 @@ export default function RestaurantTable({ range }) {
         <Table aria-label="simple table">
           <TableHead>
             <TableRow>
-              <TableCell>name</TableCell>
-              <TableCell align="right">time</TableCell>
+              <TableCell className={classes.text}>Name</TableCell>
+              <TableCell className={classes.text} align="left">
+                Time
+              </TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
-            <TableRow>
-              <TableCell component="th" scope="row">
-                test
-              </TableCell>
-              <TableCell align="right">test</TableCell>
-            </TableRow>
+            {content.map((row) => (
+              <TableRow key={row.name}>
+                <TableCell component="th" scope="row">
+                  {row.name}
+                </TableCell>
+                <TableCell align="left">{row.times}</TableCell>
+              </TableRow>
+            ))}
           </TableBody>
         </Table>
       </TableContainer>
