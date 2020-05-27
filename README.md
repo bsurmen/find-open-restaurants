@@ -35,4 +35,4 @@ Live link: [burak-home-assignment](https://burak-home-assignment.netlify.app/)
 
 
 ## Contact
-Created by [@bsurmen](https://www.bsurmen.works/) - feel free to contact me!
+Created by [@bsurmen](https://www.burak.works/) - feel free to contact me!
